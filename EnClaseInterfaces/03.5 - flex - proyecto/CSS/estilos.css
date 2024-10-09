@@ -60,7 +60,7 @@
 .menu__list a{
     text-transform: uppercase;
     color: gray;
-    font-weight: blod;
+    font-weight: bold;
     letter-spacing: 1px;
     padding: 15px;
     transition: all 500ms;
@@ -76,19 +76,20 @@
 /* contenido */
 .content{
     /* Añadir aquí Flex y Align y/o justify */
-
+    
 
     margin-top: 20px;
     margin-bottom: 20px;
 }
 .content__projects{
     /* Añadir aquí Flex y Align y/o justify */
-    
+    display: flex;
 
 }
 .projects__project{
     /* Añadir aquí Flex */
-
+    flex-direction: row;
+    flex-wrap: wrap;
 
     margin-bottom: 25px;
     margin-right: 20px;
@@ -124,7 +125,7 @@
 /* barra lateral */
 .content__lateral{
     /* Añadir aquí Flex */
-
+    display: flex;
 
     margin-right: 30px;
     padding: 15px;
@@ -171,6 +172,7 @@
 /* Footer */
 .content__footer{
     /* Añadir aquí Flex y Align y/o justify */
+    
 
 
     height: 120px;
@@ -196,7 +198,7 @@
 
 .footer__info{
     /* Añadir aquí Flex y Order */
-
+    
     opacity: 0.7;
     margin-left: 20px;
 }
