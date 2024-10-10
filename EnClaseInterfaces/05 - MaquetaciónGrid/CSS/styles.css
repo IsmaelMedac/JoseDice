@@ -172,16 +172,11 @@
 /* Footer */
 .content__footer{
     /* Añadir aquí Flex y Align y/o justify */
-    
-
-
     height: 120px;
     border-top: 1px solid rgba(226,225,226, 0.8);
 }
 .footer__logoFooter{
     /* Añadir aquí Flex y order */
-
-
     padding: 10px;
     margin-left: 20px;
     font-family: Helvetica, Arial,  sans-serif;
