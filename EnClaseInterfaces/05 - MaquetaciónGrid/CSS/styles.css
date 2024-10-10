@@ -14,10 +14,10 @@
     min-height: 600px;
 }
 .container__header{
-    /* Añadir aquí Flex y Align y/o justify */
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    /* Añadir aquí Grid y Align y/o justify */
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+
     align-items: center;
     justify-content: space-between;
     height: 120px;
@@ -25,8 +25,8 @@
 }
 
 .container__logo{
-    /* Añadir aquí Flex */
-    display: flex;
+    /* Añadir aquí Grid */
+
     
     padding: 10px;
     margin-left: 20px;
@@ -34,8 +34,8 @@
     text-shadow: 1px 1px 0px gray;
     text-transform: uppercase;
 }
-/* flex-grow: 0  --> valor por defecto y así cada caja ocupa el espacio que toque. */
-/* flex-grow: 1  --> cada elemento ocupa el mismo espacio del tamaño disponible. */
+/* Grid-grow: 0  --> valor por defecto y así cada caja ocupa el espacio que toque. */
+/* Grid-grow: 1  --> cada elemento ocupa el mismo espacio del tamaño disponible. */
 .container__logo h1{
     font-family: Helvetica, Arial, sans-serif;
     font-style: italic;
@@ -44,14 +44,15 @@
 }
 
 .header__menu{
-    /* Añadir aquí Flex */
-    display: flex;
+    /* Añadir aquí Grid */
+    display: Grid;
     
     height: 100%;
 }
 .menu__list{
-    /* Añadir aquí Flex y Align y/o justify */
-    display: flex;
+    /* Añadir aquí Grid y Align y/o justify */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     align-items: center;
     
     height: 100%;
@@ -64,10 +65,7 @@
     letter-spacing: 1px;
     padding: 15px;
     transition: all 500ms;
-    -webkit-transition: all 500ms;
-    -moz-transition: all 500ms;
-    -ms-transition: all 500ms;
-    -o-transition: all 500ms;
+    
 }
 .menu__list a:hover{
     background-color: #ccc;
@@ -75,21 +73,21 @@
 }
 /* contenido */
 .content{
-    /* Añadir aquí Flex y Align y/o justify */
-    
+    /* Añadir aquí Grid y Align y/o justify */
+    display: grid;
+    grid-template-columns: 2fr 8fr;
 
     margin-top: 20px;
     margin-bottom: 20px;
 }
 .content__projects{
-    /* Añadir aquí Flex y Align y/o justify */
-    display: flex;
-
+    /* Añadir aquí Grid y Align y/o justify */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 .projects__project{
-    /* Añadir aquí Flex */
-    flex-direction: row;
-    flex-wrap: wrap;
+    /* Añadir aquí Grid */
+    grid-column: auto;
 
     margin-bottom: 25px;
     margin-right: 20px;
@@ -117,16 +115,14 @@
     font-size: 16px;
     color: gray;
     transition: all 500ms;
-    -webkit-transition: all 500ms;
-    -moz-transition: all 500ms;
-    -ms-transition: all 500ms;
-    -o-transition: all 500ms;
+    
 }
 /* barra lateral */
 .content__lateral{
-    /* Añadir aquí Flex */
-    display: flex;
-
+    /* Añadir aquí Grid */
+    /* grid-template-rows: auto; */
+    display: grid;
+    
     margin-right: 30px;
     padding: 15px;
 }
@@ -171,12 +167,12 @@
 }
 /* Footer */
 .content__footer{
-    /* Añadir aquí Flex y Align y/o justify */
+    /* Añadir aquí Grid y Align y/o justify */
     height: 120px;
     border-top: 1px solid rgba(226,225,226, 0.8);
 }
 .footer__logoFooter{
-    /* Añadir aquí Flex y order */
+    /* Añadir aquí Grid y order */
     padding: 10px;
     margin-left: 20px;
     font-family: Helvetica, Arial,  sans-serif;
@@ -192,7 +188,7 @@
 }
 
 .footer__info{
-    /* Añadir aquí Flex y Order */
+    /* Añadir aquí Grid y Order */
     
     opacity: 0.7;
     margin-left: 20px;
