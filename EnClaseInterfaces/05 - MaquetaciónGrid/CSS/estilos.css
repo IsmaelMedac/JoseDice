@@ -188,7 +188,47 @@
     margin-left: 20px;
 }
 
+/*Responsivo*/
 /* vista móvil */
-@media (max-width: 785px){
+@media (max-width: 950px){
+    /* body{
+        background-color: red;
+    } */
+    .content__projects{
+        display: grid;
+        /*auto-fill incluye el contenido acorde al tamaño definido para cada proyecto*/
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+    }
+}
 
+/* vista móvil */
+@media (max-width: 780px){
+    /* body{
+        background-color: green;
+    } */
+     .container__header{
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        width: 100%;
+        height: 120px;
+        border-bottom: 1px solid rgba(226, 225, 226, 0.8);
+     }
+     .container__logo{
+        text-align: center;
+     }
+     .menu__list{
+        text-align: center;
+     }
+     .container__content{
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-left: 3%;
+     }
+     .lateral__list{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 10px;
+     }
 }
