@@ -30,7 +30,7 @@ body{
         "contenido contenido contenido contenido lateral"
         "footer footer footer footer footer";
     
-    grid-column-gap: 10px;
+    grid-column-gap: 5px;
     width: 80%;
     /* height: 100%; */
     height: 100vh; /*100% de la altura de nuestro navegador*/
