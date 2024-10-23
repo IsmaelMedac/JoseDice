@@ -8,7 +8,7 @@
     --color-secondary: #fff;
     --color-banner: #2522BA;
     --color-text-btn: #0d6efd;
-    --colog-bg-btn: #ffdc60;
+    --color-bg-btn: #ffdc60;
     --color-subtitle: #c75c6f;
     --color-title: #292930;
     --color-bg-services: #f8f8f8;
@@ -303,8 +303,11 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 }
 /* efecto */
 .banner__btn:hover{
-    background-color: var(--colog-bg-btn);
+    background-color: var(--color-bg-btn);
     color: var(--color-bg-dark);
+    /* sombra */
+    box-shadow: 2px 2px 8px 0 var(--color-bg-btn),
+     4px 4px 24px 0 black, 0px 0px 48px 2px yellow;
 
 }
 
@@ -420,7 +423,6 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 }
 .shapes__item--shape7{
     /* position y animación */
-        /* position y animación */
         top:0;
         right: 10rem;
         z-index: 1;
@@ -475,11 +477,15 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 }
 .services__list{
     /* flex */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 
     gap: 3rem; /* separación entre los elementos */
 }
 .services__service{
     /* flex */
+    display: grid;
+    grid-template-columns: 1fr 2.5fr;
 
     height: 100%;
     padding: 5rem 4rem;
@@ -491,6 +497,9 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     border-image-source: linear-gradient(90deg, var(--color-bg-services), rgba(255,255,255,0));
     /* efecto */
 
+}
+.services__service:hover{
+    background-color: var(--color-bg-services);
 }
 
 .service__container-img{
@@ -507,7 +516,8 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     font-weight: 500;
     line-height: 1.4;
     margin-bottom: 3rem;
-    /* efecto */
+    /*efecto*/
+    transition: all 300ms ease-in-out ;
 }
 .service__description{
     overflow: hidden;
@@ -515,33 +525,45 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     margin-bottom: 4rem;
 }
 .service__more{
-    /* position */
-
+    /*position*/position: relative;
+    display: inline-block;
     font-weight: 500;
     font-size: 1.7rem;
     padding-left: 5rem;
-    /* efecto */
+    /*efecto*/
+    transition: all 300ms linear;
 }
 
-/* pseudoelemento before */
+/* pseudoelemento before__more */
+.service__more::before{
+    content: "";
+    width: 3.4rem;
+    height: 1.5px;
+    background-color: var(--color-text-body);
+    position: absolute;
+    left: 0;
+    /* top: 10%; */
+    bottom: 50%;
+}
+
 
 .service__more:hover,
 .service__title:hover{
     color: var(--color-primary);
 }
 .service__more:hover::before{
-    color: var(--color-primary);
+    background-color: var(--color-primary);
 }
 
 /* para generar el escalonado de las tarjetas de servicios */
 .services__service--bottom{
-    
+    margin-bottom: 20rem;
 }
 .services__service--middle{
-    
+    margin-bottom: 10rem;
 }
 .services__service--top{
-    
+    margin-bottom: 0rem;
 }
 
 /* coloco a las formas detrás de los servicios */
