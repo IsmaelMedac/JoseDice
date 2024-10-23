@@ -420,8 +420,21 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 }
 .shapes__item--shape7{
     /* position y animación */
-
-}
+        /* position y animación */
+        top:0;
+        right: 10rem;
+        z-index: 1;
+        animation-name: muestraArriba;
+        animation-duration: 2s;
+    }
+    @keyframes muestraArriba{
+        0%{
+            transform: translateY(-50%);
+        }
+        100%{
+            transform: translateY(0%);
+        }
+    }
 
 /* Estilos sección Servicios */
 .layout__services{
