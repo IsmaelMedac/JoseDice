@@ -77,18 +77,22 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     margin: 0 2.4rem;
 }
 .nav__title{
-    /*position*/position: relative;
-    display: inline-block;
+    /*position*/
+    position: relative;
+    /* display: inline-block; */
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
     line-height: 6rem;
     font-weight: 500;
     color: var(--color-text-body);
     /*EFECTO*/
     transition: all 300ms ease-in-out;
-    -webkit-transition: all 300ms ease-in-out;
-    -moz-transition: all 300ms ease-in-out;
-    -ms-transition: all 300ms ease-in-out;
-    -o-transition: all 300ms ease-in-out;
 }
+
+
 .nav__icon{
     font-size: 1rem;
     font-weight: bold;
@@ -129,46 +133,135 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 
 
 .nav__submenu{
-    /* position */
-    
-    
+    /*position*/display: block;
+    position: absolute;
+    top: 100%;
+    left: 2rem;
     min-width: 19rem;
     padding: 1.5rem 1rem;
     background-color: var(--color-secondary);
     box-shadow: 0px 13px 48px 0 rgba(0,0,0,15%);
-    
-    /* visibility, opacity y efecto */
 
+    /*visibility,opacityyefecto*/
+    opacity: 0;
+    visibility: hidden;
+    transition: all 300ms ease-in-out;
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
 }
 
 .submenu__item{
-    /* efecto */ 
+    /*efecto*/
+    opacity: 0;
+    transform: translateX(3rem);
+    -webkit-transform: translateX(3rem);
+    -moz-transform: translateX(3rem);
+    -ms-transform: translateX(3rem);
+    -o-transform: translateX(3rem);
+    transition: all 300ms ease-in-out;
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
 }
 
 /* efecto */
+.sublist__item:nth-child(1){
+    transition-delay: 100ms;
+}
+.sublist__item:nth-child(2){
+    transition-delay: 200ms;
+}
+.sublist__item:nth-child(3){
+    transition-delay: 300ms;
+}
+.sublist__item:nth-child(4){
+    transition-delay: 400ms;
+}
+.sublist__item:nth-child(5){
+    transition-delay: 500ms;
+}
+
 
 
 .submenu__title{
-    /* position */ 
+    /*position*/position: relative;
     font-size: 1.4rem;
     text-transform: capitalize;
     text-decoration: none;
     font-weight: 500;
     color: var(--color-text-body);
     padding: 0.7rem 1.5rem;
-    /* efecto */
-
+    /*efecto*/
+    transition: all 300ms ease-in-out;
+    
 }
 
 /* efectos varios */
+.nav__item:hover>.nav__submenu{
+    opacity: 1;
+    visibility: visible;
+    z-index: 99;
+    left: 0;
+}
+.nav__item:hover>.nav__submenu>.submenu__item{
+    opacity: 1;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+}
 
+.submenu__title:hover{
+    color: var(--color-primary);
+    /* transform: scale(1.1); */
+    
+}
+.submenu__item::after{
+    content: "";
+    height: 0.15rem;
+    width: 0;
+    background-color: var(--color-primary);
+    position: absolute;
+    bottom: 0.5rem;
+    opacity: 0;
+    left: 35%;
+    transition: all 300ms linear;
+    -webkit-transition: all 300ms linear;
+    -moz-transition: all 300ms linear;
+    -ms-transition: all 300ms linear;
+    -o-transition: all 300ms linear;
+}
+.submenu__item:hover:nth-child(1)::after{
+    width: 52%;
+    opacity: 1;
+    left: 8%;
+}
+.submenu__item:hover:nth-child(2)::after{
+    width: 62%;
+    opacity: 1;
+    left: 8%;
+}
+.submenu__item:hover:nth-child(3)::after{
+    width: 77%;
+    opacity: 1;
+    left: 8%;
+}
+.submenu__item:hover:nth-child(4)::after{
+    width: 47%;
+    opacity: 1;
+    left: 8%;
+}
 
 
 
 /* Estilos para el Banner */
 .layout__banner{
     /* position */
-
+    position: relative;
     min-height: 60rem;
     /*border: 2px solid red; */
     margin: 0 3rem;
@@ -183,7 +276,8 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 }
 .banner__content{
     /* position */
-
+    position: relative;
+    display: inline-block;
 
     width: 50%;
     padding: 0 1.5rem;
@@ -205,26 +299,77 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     text-transform: capitalize;
     text-align: center;
     box-shadow: 0px 45px 70px -25px var(--color-primary);
-    /* efecto */
+    /*efecto*/transition: all 300ms ease-in-out ;
 }
 /* efecto */
+.banner__btn:hover{
+    background-color: var(--colog-bg-btn);
+    color: var(--color-bg-dark);
 
+}
 
 .shapes__item{
     /* position y z-index */
-    
+    position: absolute;
+    z-index: 2;
     pointer-events: none;
 }
 .shapes__item--shape1{
     /* position y animación */
+    top: 0;
+    right: 0;
+    animation-name: muestraDerecha;
+    animation-duration: 2s;
+}
+
+@keyframes muestraDerecha{
+    0%{
+        transform: translateX(50%);
+        -webkit-transform: translateX(50%);
+        -moz-transform: translateX(50%);
+        -ms-transform: translateX(50%);
+        -o-transform: translateX(50%);
+}
+    100%{
+        transform: translateX(0px);
+        -webkit-transform: translateX(0px);
+        -moz-transform: translateX(0px);
+        -ms-transform: translateX(0px);
+        -o-transform: translateX(0px);
+}
 }
 
 .shapes__item--shape2{
     /* position y animación */
+    bottom: 0;
+    left: 0;
+    animation-name: muestraIzquierda;
+    animation-duration: 2s;
+
+}
+
+@keyframes muestraIzquierda{
+    0%{
+        transform: translateX(-50);
+        -webkit-transform: translateX(-50);
+        -moz-transform: translateX(-50);
+        -ms-transform: translateX(-50);
+        -o-transform: translateX(-50);
+}
+    100%{
+        transform: translateX(0px);
+        -webkit-transform: translateX(0px);
+        -moz-transform: translateX(0px);
+        -ms-transform: translateX(0px);
+        -o-transform: translateX(0px);
+}
 }
 
 .shapes__item--shape3{
-    /* position y animación */
+    /*positionyanimación*/top: 34%;
+    left: 50%;
+    animation: mueveShape3 ;
+    -webkit-animation: mueveShape3 ;
 }
 
 .shapes__item--shape4{
@@ -245,6 +390,7 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 }
 .shapes__item--shape7{
     /* position y animación */
+
 }
 
 /* Estilos sección Servicios */
