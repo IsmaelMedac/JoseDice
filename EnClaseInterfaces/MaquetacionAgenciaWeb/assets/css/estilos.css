@@ -569,11 +569,15 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 /* coloco a las formas detrás de los servicios */
 .service-shapes__item{
     /* position y z-index */
-
+    position: absolute;
+    z-index: -1;
     pointer-events: none;
 }
 .service-shapes--shape1{
     /* position */
+    top: -10%;
+    right: 0%;
+    
 }
 .service-shapes--shape2{
     /* position */
