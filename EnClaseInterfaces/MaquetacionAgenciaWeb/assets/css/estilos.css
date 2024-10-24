@@ -626,7 +626,7 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 
 /* pseudoelemento before */
 .categories__item::before{
-    content: "H";
+    content: "";
     height: 0.2rem;
     width: 0%;
     background-color: var(--color-primary);
@@ -667,6 +667,7 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 .project__img {
   width: 100%;
   /* efecto */
+  transition: all 2s ease-in-out;
 }
 
 .project__content {
