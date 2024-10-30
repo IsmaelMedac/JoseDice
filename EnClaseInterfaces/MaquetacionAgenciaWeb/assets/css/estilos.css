@@ -590,9 +590,9 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 }
 
 @keyframes mueveBolaRosita {
-    100% {
-        transform: rotate(360deg) translate(200px) rotate(-360deg) translate(-200px);
-    }
+  100% {
+    transform: rotate(360deg) translate(200px) rotate(-360deg) translate(-200px);
+  }
 }
 
 /* Estilos para la sección de Proyectos */
@@ -617,7 +617,7 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 .projects__categories {
   /* Flex */
   display: grid;
-  grid-template-columns:1fr 1fr 1fr 3fr;
+  grid-template-columns: 1fr 1fr 1fr 3fr;
   z-index: 1;
 
   gap: 7rem;
@@ -625,20 +625,20 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 }
 
 /* pseudoelemento before */
-.categories__item::before{
-    content: "";
-    height: 0.2rem;
-    width: 0%;
-    background-color: var(--color-primary);
-    position: absolute;
-    bottom: 0.8rem;
-    left: 0;
-    opacity: 1;
-    transition: all 300ms linear;
+.categories__item::before {
+  content: "";
+  height: 0.2rem;
+  width: 0%;
+  background-color: var(--color-primary);
+  position: absolute;
+  bottom: 0.8rem;
+  left: 0;
+  opacity: 1;
+  transition: all 300ms linear;
 }
-.categories__item:hover::before{
-    opacity: 1;
-    width: 100%
+.categories__item:hover::before {
+  opacity: 1;
+  width: 100%;
 }
 
 .projects__all {
@@ -649,14 +649,15 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
   gap: 4rem 7rem;
 }
 .projects__project {
-  width: calc(50% - 3.5rem); /* consigo que mis tarjetas tengan un tamaño variable. Facilita el responsive */
-
+  width: calc(
+    50% - 3.5rem
+  ); /* consigo que mis tarjetas tengan un tamaño variable. Facilita el responsive */
 }
 /*Pseudo elemento before*/
-.projects__categories::before{
-    content: "HOLA";
-    position: absolute;
-    bottom: -1.2rem;
+.projects__categories::before {
+  content: "HOLA";
+  position: absolute;
+  bottom: -1.2rem;
 }
 
 .project__container-img {
@@ -668,6 +669,10 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
   width: 100%;
   /* efecto */
   transition: all 2s ease-in-out;
+}
+
+.projects__project:hover .project__img {
+  transform: scale(1.2);
 }
 
 .project__content {
@@ -682,6 +687,11 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
   color: var(--color-title);
   margin-bottom: 1rem;
   /* efecto */
+  transition: all 300ms linear;
+}
+
+.project__title:hover {
+  color: var(--color-primary);
 }
 
 .project__tags {
@@ -689,25 +699,41 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 }
 .project-shapes__item {
   /* position y z-index */
-
+  position: absolute;
   pointer-events: none;
 }
-.project-shapes--shape1 {
-  /* position */
-
-  opacity: 0.5;
+.project-shapes--shape1{
+    top: 4%;
+    right: 11%;
+    opacity: 0.5;
 }
-.project-shapes--shape2 {
-  /* position */
-
-  opacity: 0.5;
-  /* animación */
+.project-shapes--shape2{
+    top: 8%;
+    right: 35%;
+    opacity: 0.5;
+    animation: moveShape7 40s infinite;
 }
-.project-shapes--shape3 {
-  /* position */
+.project-shapes--shape3{
+    top: 90px;
+    right: 200px;
+    opacity: 0.8;
+    animation: moveShape7 40s infinite;
+    -webkit-animation: moveProjectShape 40s infinite;
+}
 
-  opacity: 0.8;
-  /* animación */
+@keyframes moveProjectShape{
+    0%{
+        transform: translateX(0) translateY(0);
+    }
+    35%{
+        transform: translateX(150px) translateY(-50px);
+    }
+    70%{
+        transform: translateX(-50px) translateY(100px);
+    }
+    100%{
+        transform: translateX(0) translateY(0);
+    }
 }
 
 /* Estilos para estadísticas y Mejores clientes */
@@ -816,11 +842,13 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 }
 .review__author {
   /* Flex */
+  display: grid;
+  grid-template-columns: 1fr 9fr;
 }
 .author__container-img {
   border-radius: 90px;
   overflow: hidden;
-  width: 10%;
+  /* width: 10%; */
 }
 .author__name {
   display: block; /* creo un salto de línea */
@@ -840,6 +868,10 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 .review-shapes__item {
   /* position + z-index */
   pointer-events: none;
+  position: absolute;
+  z-index: -1;
+  top: 10%;
+  right: 14%;
 }
 
 /* Estilos zona Mejores Clientes */
