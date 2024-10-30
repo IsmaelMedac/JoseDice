@@ -870,6 +870,17 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     display: grid;
     grid-template-columns: 1fr 9fr;
 }
+.review__img{
+  width: 50px;
+  height: 50px;
+}
+
+/* .reviews__content > .review__company > .review__img:nth-child(2){
+  width: 50px;
+  height: 50px;
+} */
+
+
 .author__container-img{
     border-radius: 90px;
     overflow: hidden;
@@ -903,7 +914,9 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 /* Estilos zona Mejores Clientes */
 .layout__clients{
     /* position + z-index */
-
+  position: relative;
+  z-index: 1;
+  
 }
 .clients__header{
     text-align: left;
@@ -920,29 +933,42 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     margin-bottom: 6rem;
 }
 .clients__logos{
-    /* Flex */
+    /* Grid */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
 
     gap: 3rem;
 }
 .clients__item{
     /* Flex-basis */
-
+ 
 }
 .clients__img{
     filter: grayscale(25%);
     opacity: 0.5;
     /* efecto */
+    transition: all 500ms ease-in-out;
+}
+.clients__item:hover > .clients__img{
+  filter: grayscale(0%);
+  opacity: 1;
+  -webkit-filter: grayscale(0%);
+  cursor: pointer;
 }
 
 .client-shapes__item{
     /* position + z-index */
-
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    right: 0;
 }
 
 /* Estilos últimas noticias */
 .layout__news{
     /* position + z-index */
-
+    position: relative;
+    z-index: 1;
     padding: 14rem 0;
 }
 .news__container{
@@ -963,10 +989,13 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 }
 .news__list{
     /* Flex */
+    display: grid;
+    
 }
 .news__new{
     /* Flex + align */
-
+    display: flex;
+    align-items: center;
     gap: 2rem;
     padding-top: 4rem;
     padding-bottom: 4rem;
@@ -975,7 +1004,12 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     border-top: 1px solid var(--color-borders);
     border-bottom: 1px solid var(--color-borders);
     /* efecto */
+    transition: all 300ms ease-in-out;
+}
 
+.news__new:hover{
+  border-top-color: var(--color-primary);
+  
 }
 
 .news__new:last-child{
@@ -988,13 +1022,15 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 }
 .new__img{
     border-radius: 3rem;
-
-    /* efecto */
-
+    transition: all 2s ease-in-out;
+}
+.news__new:hover .new__img{
+  transform: scale(1.1);
 }
 
 .new__content{
     /* flex */
+    display: grid;
 }
 .new__title{
     font-size: 2.4rem;
@@ -1026,6 +1062,8 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 }
 .new-shapes__item{
     /* position + z-index */
+    position: absolute;
+    z-index: 0;
 
 }
 .new-shapes--shape1{
@@ -1089,6 +1127,8 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 .contact__btn{
     display: inline-block;
     /* position + z-index */
+    position: relative;
+    z-index: 1;
 
     overflow: hidden;
     padding: 2.3rem 5.5rem;
