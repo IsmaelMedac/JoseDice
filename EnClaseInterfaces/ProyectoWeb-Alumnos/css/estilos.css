@@ -209,20 +209,18 @@ body{
 /* keyframes */
 @keyframes muestraTitulo {
     0%{
-        transform: translateX(-700px);
+        transform: translateX(-200%) scale(4.0);
         opacity: 0.5;
-        font-size: 80px;
     }
-    30%{
-        transform: translateX(1050);
-        
+    35%{
+        transform: translate(200%);
     }
-    70%{
-        transform: translateX(-1050);
+    65%{
+        transform: translate(-200%) scale(4.0);
+        opacity: 0.2;
     }
     100%{
-        transform: translateX(1050);
-        opacity: 1;
+        transform: translateX(0%) scale(1.0);
     }
 }
 
@@ -238,10 +236,29 @@ body{
     margin-top: 40px;
     cursor: pointer;
     /* transicion */
-
+    transition: all 500ms;
 }
 /*efecto hover en las cartas */
+.cards__card:hover{
+    background-color: var(--color-bg);
+    /* color: white; */
+}
 
+.cards__card:hover .card__icon{
+    background-color: black;
+    font-size: 60px;
+    color: var(--color-primary);
+    animation: mueveIcono 500ms linear;
+}
+
+@keyframes mueveIcono {
+    from{
+        transform: translateY(-200%);
+    }
+    /* to {
+        transform: translate(0%);
+    } */
+}
 
 .cards__card:last-child{
     margin-right: 0px;
@@ -271,6 +288,11 @@ body{
     transition: all 500ms;
 }
 /*efecto hover en la carta - modificamos card_category */
+
+
+@keyframes moverTexto {
+    
+}
 
 .card__description{
     font-family: "TrebuchetMS";
