@@ -146,20 +146,25 @@ body{
     height: 70px;
     background: transparent;
 }
-.menu__list li{
+.list__item{
     font-size: 24px;
     display: inline-block; /* puedo flotar con el float o bien mediante inline-block. Funcionaría igual */
     margin: 0px 20px 0px 20px;
     letter-spacing: 1px;
     line-height: 70px;
 }
-.menu__list li a{
+.list__item a{
     display:block;
     color: var(--color-text-white);
     text-decoration: none;
     /* transición */
+    transition: all 300ms linear;
 }
 /* hover */
+.list__item:hover{
+    color: var(--color-primary);
+    transform: scale(1.1);
+}
 
 /* Maquetando el Banner */
 .content__banner{
@@ -172,9 +177,21 @@ body{
     margin: 20px auto;
     overflow: hidden;
     /* animación */
+    animation: fondoBanner 10s infinite linear;
+
 }
 
 /* keyframes */
+@keyframes fondoBanner {
+    0%
+    {
+
+    }
+    100% 
+    {
+        background-position: -200px -200px;
+    }
+}
 
 .content__banner h1{
     display: block;
@@ -186,9 +203,28 @@ body{
     text-shadow: 2px 2px 1px var(--color-bg);
     margin: 10px auto;
     /* animación */
+    animation: muestraTitulo 10s linear;
 }
 
 /* keyframes */
+@keyframes muestraTitulo {
+    0%{
+        transform: translateX(-700px);
+        opacity: 0.5;
+        font-size: 80px;
+    }
+    30%{
+        transform: translateX(1050);
+        
+    }
+    70%{
+        transform: translateX(-1050);
+    }
+    100%{
+        transform: translateX(1050);
+        opacity: 1;
+    }
+}
 
 /* Tarjetas */
 .cards__card{
