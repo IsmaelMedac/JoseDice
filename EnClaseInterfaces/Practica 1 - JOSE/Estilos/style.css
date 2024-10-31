@@ -1,0 +1,133 @@
+/* Encabezado y Navegación */
+header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    background-color: #4a2c2a;
+    color: white;
+    padding: 10px 15px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    box-sizing: border-box;
+}
+
+header h1 {
+    margin: 0;
+    padding-right: 15px;
+}
+
+nav ul {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    justify-content: end;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+}
+
+nav a:hover {
+    background-color: #6a4b4b;
+    border-radius: 5px;
+}
+
+/* Body y Contenedor principal */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 250px;
+    gap: 20px;
+    margin-top: 80px;
+    padding: 20px;
+}
+
+/* Barra lateral */
+aside {
+    background-color: #eae2d7;
+    padding: 20px;
+    position: sticky;
+    top: 80px;
+    height: fit-content;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Contenido Principal */
+main {
+    display: grid;
+    gap: 20px;
+}
+
+/* Sección de Categorías Destacadas, Productos y Equipo */
+.categorias_destacadas, .detalles_productos, .seccion_equipo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.carta_categoria, .carta_producto, .miembro_equipo {
+    background-color: #eae2d7;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+/* Aplicar a la caterogia, productos y equipo el sombreado al pasar el raton */
+.carta_categoria:hover, .carta_producto:hover, .miembro_equipo:hover {
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+/* redondeo de imagenes del equipo */
+.miembro_equipo img {
+    max-width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+/* Pie de página */
+footer {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    width: 100%;
+    min-height: 100vh;
+    position: fixed;
+    background-color: #4a2c2a;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Diseño Responsivo */
+@media (max-width: 700px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    aside {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    nav ul {
+        grid-auto-flow: row;
+        justify-content: center;
+        gap: 10px;
+    }
+}

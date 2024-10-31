@@ -84,6 +84,7 @@ body{
     cursor: pointer;
     overflow: hidden;
     /* transición */
+    transition: all 500ms;
 }
 
 .header__logo h3{
@@ -92,15 +93,29 @@ body{
     font-size: 40px;
     margin-right: 65px;
     /* transición */
+    transition: all 500ms;
 }
 
 /* efecto con keyframes - hover en el Logo */
-
+.header__logo:hover h3{
+    animation: mueveDerecha 2s;
+}
+@keyframes mueveDerecha{
+    from{
+        transform: translateX(200%);
+    } to {
+        transform: translateX(0%);
+    }
+}
 
 /* efecto hover en Logo */
+.header__logo:hover{
+    border-radius: 5px;
+    background-color: var(--color-backgroung);
+    color: black;
+}
 
-
-.header__logo .logo__gear{
+ .logo__gear{
     display: block;
     float: left;
     font-size: 30px;
@@ -108,14 +123,23 @@ body{
     margin-left: 26px;
 
     /* A la hora de crear animación */
-
+    animation-name: giroRueda;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
 }
 
 /* animación logo rueda */
-
+@keyframes giroRueda{
+    100%{
+        transform: rotate(360deg);
+    }
+}
 
 /* efecto de desaparece y vuelve keyframes */
+.header__logo:hover .logo__gear{
 
+}
 
 .header__menu{
     float: right;
